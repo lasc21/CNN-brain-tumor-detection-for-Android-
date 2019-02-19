@@ -1,9 +1,11 @@
-# TensorFlow Android Camera Demo
+# Aplicación movil implementada con TensorFlow Android Camera Demo para detectar tumores cerebrales 
 
-This folder contains an example application utilizing TensorFlow for Android
-devices.
+Este código es una aplicacion movil implementada para Android la cual por medio de redes neuronales convolucionales a sido entrenada y permite la detección en imagenes medicas. 
 
 ## Description
+
+
+[TF Classify] (https://github.com/tensorflow/tensorflow):
 
 The demos in this folder are designed to give straightforward samples of using
 TensorFlow in mobile applications.
