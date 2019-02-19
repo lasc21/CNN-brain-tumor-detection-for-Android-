@@ -32,7 +32,7 @@ on API >= 14 devices.
         in an overlay on the camera image.
 
 
-<img src="sample_images/classify1.jpg" width="30%"><img src="sample_images/stylize1.jpg" width="30%"><img src="sample_images/detect1.jpg" width="30%">
+<img src="sample_images/dos.png" width="30%"><img src="sample_images/stylize1.jpg" width="30%"><img src="sample_images/detect1.jpg" width="30%">
 
 ## Prebuilt APK:
 
