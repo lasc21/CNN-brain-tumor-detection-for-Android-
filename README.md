@@ -20,12 +20,14 @@ A partir de la información dada por el sitio anterior se entreno la red neurona
 
 Una base de datos de:
 492 imagenes sin tumor cerebral.
+Ejemplos de imagenes de entrenamiento:
+
+
 395 imagenes con turmo cerebral.
+Ejemplos de imagenes de entrenamiento:
 
+Para descargar la base de datos: https://drive.google.com/file/d/1tEYDnX66JyDOcGrvAsZ-wvC0c2VnNW-X/view?usp=sharing
 
-A device running Android 5.0 (API 21) or higher is required to run the demo due
-to the use of the camera2 API, although the native libraries themselves can run
-on API >= 14 devices.
 
 ## Resultados del entrenamiento 
 
@@ -63,7 +65,13 @@ INFO:tensorflow:Final test accuracy = 97.1% (N=206)
         model to classify camera frames in real-time, displaying the top results
         in an overlay on the camera image.
 
+Resultados:
 
 <img src="sample_images/uno.png" width="30%"><img src="sample_images/dos.png" width="30%">
 
+Mayor información:
+luis.santamariac12@gmail.com
 
+A device running Android 5.0 (API 21) or higher is required to run the demo due
+to the use of the camera2 API, although the native libraries themselves can run
+on API >= 14 devices.
