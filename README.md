@@ -18,13 +18,31 @@ Toda la informacion referente al codigo se encuentra en: (https://github.com/ten
 A partir de la información dada por el sitio anterior se entreno la red neuronal convolucional: MobilNet, con la siguiente información: 
 
 
+Una base de datos de:
+492 imagenes sin tumor cerebral.
+395 imagenes con turmo cerebral.
 
 
 A device running Android 5.0 (API 21) or higher is required to run the demo due
 to the use of the camera2 API, although the native libraries themselves can run
 on API >= 14 devices.
 
-## Current samples:
+## Resultados del entrenamiento 
+
+INFO:tensorflow:2018-09-12 20:47:38.267789: Step 1970: Train accuracy = 100.0%
+INFO:tensorflow:2018-09-12 20:47:38.267983: Step 1970: Cross entropy = 0.037101
+INFO:tensorflow:2018-09-12 20:47:38.320407: Step 1970: Validation accuracy = 94.0% (N=100)
+INFO:tensorflow:2018-09-12 20:47:38.849757: Step 1980: Train accuracy = 100.0%
+INFO:tensorflow:2018-09-12 20:47:38.849973: Step 1980: Cross entropy = 0.031685
+INFO:tensorflow:2018-09-12 20:47:38.908055: Step 1980: Validation accuracy = 97.0% (N=100)
+INFO:tensorflow:2018-09-12 20:47:39.438405: Step 1990: Train accuracy = 98.0%
+INFO:tensorflow:2018-09-12 20:47:39.438596: Step 1990: Cross entropy = 0.058183
+INFO:tensorflow:2018-09-12 20:47:39.493603: Step 1990: Validation accuracy = 99.0% (N=100)
+INFO:tensorflow:2018-09-12 20:47:39.971811: Step 1999: Train accuracy = 99.0%
+INFO:tensorflow:2018-09-12 20:47:39.972008: Step 1999: Cross entropy = 0.023113
+INFO:tensorflow:2018-09-12 20:47:40.027580: Step 1999: Validation accuracy = 98.0% (N=100)
+INFO:tensorflow:Final test accuracy = 97.1% (N=206)
+
 
 1. [TF Classify](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/android/src/org/tensorflow/demo/ClassifierActivity.java):
         Uses the [Google Inception](https://arxiv.org/abs/1409.4842)
@@ -34,127 +52,7 @@ on API >= 14 devices.
 
 <img src="sample_images/dos.png" width="30%"><img src="sample_images/stylize1.jpg" width="30%"><img src="sample_images/detect1.jpg" width="30%">
 
-## Prebuilt APK:
 
-If you just want the fastest path to trying the demo, you may download the
-nightly build
-[here](https://ci.tensorflow.org/view/Nightly/job/nightly-android/). Expand the
-"View" and then the "out" folders under "Last Successful Artifacts" to find
-tensorflow_demo.apk. Also available are precompiled native libraries that you
-may drop into your own applications. See
-[tensorflow/contrib/android/README.md](../../../tensorflow/contrib/android/README.md)
-for more details.
-
-## Running the Demo
-
-Once the app is installed it can be started via the "TF Classify", "TF Detect"
-and "TF Stylize" icons, which have the orange TensorFlow logo as their icon.
-
-While running the activities, pressing the volume keys on your device will
-toggle debug visualizations on/off, rendering additional info to the screen
-that may be useful for development purposes.
-
-## Building the Demo from Source
-
-Pick your preferred approach below. At the moment, we have full support for
-Bazel, and partial support for gradle, cmake, make, and Android Studio.
-
-As a first step for all build types, clone the TensorFlow repo with:
-
-```
-git clone --recurse-submodules https://github.com/tensorflow/tensorflow.git
-```
-
-Note that `--recurse-submodules` is necessary to prevent some issues with
-protobuf compilation.
-
-### Bazel
-
-NOTE: Bazel does not currently support building for Android on Windows. Full
-support for gradle/cmake builds is coming soon, but in the meantime we suggest
-that Windows users download the
-[prebuilt binaries](https://ci.tensorflow.org/view/Nightly/job/nightly-android/)
-instead.
-
-##### Install Bazel and Android Prerequisites
-
-Bazel is the primary build system for TensorFlow. To build with Bazel,
-it and the Android NDK and SDK must be installed on your system.
-
-1. Install the latest version of Bazel as per the instructions [on the Bazel website](https://bazel.build/versions/master/docs/install.html).
-2. The Android NDK is required to build the native (C/C++) TensorFlow code.
-        The current recommended version is 12b, which may be found
-        [here](https://developer.android.com/ndk/downloads/older_releases.html#ndk-12b-downloads).
-3. The Android SDK and build tools may be obtained
-        [here](https://developer.android.com/tools/revisions/build-tools.html),
-        or alternatively as part of
-        [Android Studio](https://developer.android.com/studio/index.html). Build
-        tools API >= 23 is required to build the TF Android demo (though it will
-        run on API >= 21 devices).
-
-##### Edit WORKSPACE
-
-The Android entries in [`<workspace_root>/WORKSPACE`](../../../WORKSPACE#L19-L32)
-must be uncommented with the paths filled in appropriately depending on where
-you installed the NDK and SDK. Otherwise an error such as:
-"The external label '//external:android/sdk' is not bound to anything" will
-be reported.
-
-Also edit the API levels for the SDK in WORKSPACE to the highest level you
-have installed in your SDK. This must be >= 23 (this is completely independent
-of the API level of the demo, which is defined in AndroidManifest.xml).
-The NDK API level may remain at 14.
-
-##### Install Model Files (optional)
-
-The TensorFlow `GraphDef`s that contain the model definitions and weights
-are not packaged in the repo because of their size. They are downloaded
-automatically and packaged with the APK by Bazel via a new_http_archive defined
-in `WORKSPACE` during the build process, and by Gradle via download-models.gradle.
-
-**Optional**: If you wish to place the models in your assets manually,
-remove all of the `model_files` entries from the `assets`
-list in `tensorflow_demo` found in the `[BUILD](BUILD)` file. Then download
-and extract the archives yourself to the `assets` directory in the source tree:
-
-```bash
-BASE_URL=https://storage.googleapis.com/download.tensorflow.org/models
-for MODEL_ZIP in inception5h.zip mobile_multibox_v1a.zip stylize_v1.zip
-do
-  curl -L ${BASE_URL}/${MODEL_ZIP} -o /tmp/${MODEL_ZIP}
-  unzip /tmp/${MODEL_ZIP} -d tensorflow/examples/android/assets/
-done
-```
-
-This will extract the models and their associated metadata files to the local
-assets/ directory.
-
-If you are using Gradle, make sure to remove download-models.gradle reference
-from build.gradle after your manually download models; otherwise gradle
-might download models again and overwrite your models.
-
-##### Build
-
-After editing your WORKSPACE file to update the SDK/NDK configuration,
-you may build the APK. Run this from your workspace root:
-
-```bash
-bazel build -c opt //tensorflow/examples/android:tensorflow_demo
-```
-
-If you get build errors about protocol buffers, run
-`git submodule update --init` and make sure that you've modified your WORKSPACE
-file as instructed, then try building again.
-
-##### Install
-
-Make sure that adb debugging is enabled on your Android 5.0 (API 21) or
-later device, then after building use the following command from your workspace
-root to install the APK:
-
-```bash
-adb install -r bazel-bin/tensorflow/examples/android/tensorflow_demo.apk
-```
 
 ### Android Studio
 
