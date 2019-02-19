@@ -1,19 +1,24 @@
-# Aplicación movil implementada con TensorFlow Android Camera Demo para detectar tumores cerebrales 
+# Aplicación movil (Android Camera Demo) implementada con TensorFlow  para detectar tumores cerebrales 
 
-Este código es una aplicacion movil implementada para Android la cual por medio de redes neuronales convolucionales a sido entrenada y permite la detección en imagenes medicas. 
+Este código es una aplicacion movil implementada para Android la cual utiliza redes neuronales convolucionales y permite la detección de tumores en imagenes médicas de cerebro. 
 
-## Description
+## Descripción
+
+Link donde se saca la aplicación móvil que corre en Android:
+https://www.tensorflow.org/mobile/android_build
+
+Reentrenamiento de la Red Neuronal Convolucional 
+
+https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2/#0
 
 
-[TF Classify] (https://github.com/tensorflow/tensorflow):
+Toda la informacion referente al codigo se encuentra en: (https://github.com/tensorflow/tensorflow):
 
-The demos in this folder are designed to give straightforward samples of using
-TensorFlow in mobile applications.
 
-Inference is done using the [TensorFlow Android Inference Interface](../../../tensorflow/contrib/android),
-which may be built separately if you want a standalone library to drop into your
-existing application. Object tracking and YUV -> RGB conversion is handled by
-libtensorflow_demo.so.
+A partir de la información dada por el sitio anterior se entreno la red neuronal convolucional: MobilNet, con la siguiente información: 
+
+
+
 
 A device running Android 5.0 (API 21) or higher is required to run the demo due
 to the use of the camera2 API, although the native libraries themselves can run
@@ -25,14 +30,7 @@ on API >= 14 devices.
         Uses the [Google Inception](https://arxiv.org/abs/1409.4842)
         model to classify camera frames in real-time, displaying the top results
         in an overlay on the camera image.
-2. [TF Detect](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/android/src/org/tensorflow/demo/DetectorActivity.java):
-        Demonstrates a model based on [Scalable Object Detection
-        using Deep Neural Networks](https://arxiv.org/abs/1312.2249) to
-        localize and track people in the camera preview in real-time.
-3. [TF Stylize](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/android/src/org/tensorflow/demo/StylizeActivity.java):
-        Uses a model based on [A Learned Representation For Artistic Style]
-        (https://arxiv.org/abs/1610.07629) to restyle the camera preview image
-        to that of a number of different artists.
+
 
 <img src="sample_images/classify1.jpg" width="30%"><img src="sample_images/stylize1.jpg" width="30%"><img src="sample_images/detect1.jpg" width="30%">
 
