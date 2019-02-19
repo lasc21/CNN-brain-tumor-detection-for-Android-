@@ -72,7 +72,7 @@ INFO:tensorflow:Final test accuracy = 97.1% (N=206)
 
 Resultados:
 
-<img src="sample_images/uno.png" width="30%">    <img src="sample_images/dos.png" width="30%">
+<img src="sample_images/tumor_1.gif" width="30%">    <img src="sample_images/dos.png" width="30%">
 
 Mayor información:
 luis.santamariac12@gmail.com
