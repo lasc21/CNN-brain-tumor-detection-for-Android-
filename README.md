@@ -22,12 +22,12 @@ Una base de datos de:
 492 imagenes sin tumor cerebral.
 Ejemplos de imagenes de entrenamiento:
 
-<img src="sample_images/sintumor1.jpg" width="30%"><img src="sample_images/sintumor2.jpg" width="30%"><img src="sample_images/sintumor3.jpg" width="30%">
+<img src="sample_images/sintumor1.jpg" width="10%"><img src="sample_images/sintumor2.jpg" width="10%"><img src="sample_images/sintumor3.jpg" width="10%">
 
 395 imagenes con turmo cerebral.
 
 Ejemplos de imagenes de entrenamiento:
-<img src="sample_images/tumor1.jpg" width="30%"><img src="sample_images/tumor2.jpg" width="30%"><img src="sample_images/tumor3.jpg" width="30%">
+<img src="sample_images/tumor1.jpg" width="10%"><img src="sample_images/tumor2.jpg" width="10%"><img src="sample_images/tumor3.jpg" width="10%">
 
 Para descargar la base de datos: https://drive.google.com/file/d/1tEYDnX66JyDOcGrvAsZ-wvC0c2VnNW-X/view?usp=sharing
 
