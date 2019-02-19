@@ -29,18 +29,32 @@ on API >= 14 devices.
 
 ## Resultados del entrenamiento 
 
+
 INFO:tensorflow:2018-09-12 20:47:38.267789: Step 1970: Train accuracy = 100.0%
+
 INFO:tensorflow:2018-09-12 20:47:38.267983: Step 1970: Cross entropy = 0.037101
+
 INFO:tensorflow:2018-09-12 20:47:38.320407: Step 1970: Validation accuracy = 94.0% (N=100)
+
 INFO:tensorflow:2018-09-12 20:47:38.849757: Step 1980: Train accuracy = 100.0%
+
 INFO:tensorflow:2018-09-12 20:47:38.849973: Step 1980: Cross entropy = 0.031685
+
 INFO:tensorflow:2018-09-12 20:47:38.908055: Step 1980: Validation accuracy = 97.0% (N=100)
+
 INFO:tensorflow:2018-09-12 20:47:39.438405: Step 1990: Train accuracy = 98.0%
+
 INFO:tensorflow:2018-09-12 20:47:39.438596: Step 1990: Cross entropy = 0.058183
+
 INFO:tensorflow:2018-09-12 20:47:39.493603: Step 1990: Validation accuracy = 99.0% (N=100)
+
 INFO:tensorflow:2018-09-12 20:47:39.971811: Step 1999: Train accuracy = 99.0%
+
 INFO:tensorflow:2018-09-12 20:47:39.972008: Step 1999: Cross entropy = 0.023113
+
 INFO:tensorflow:2018-09-12 20:47:40.027580: Step 1999: Validation accuracy = 98.0% (N=100)
+
+
 INFO:tensorflow:Final test accuracy = 97.1% (N=206)
 
 
@@ -50,25 +64,6 @@ INFO:tensorflow:Final test accuracy = 97.1% (N=206)
         in an overlay on the camera image.
 
 
-<img src="sample_images/dos.png" width="30%"><img src="sample_images/stylize1.jpg" width="30%"><img src="sample_images/detect1.jpg" width="30%">
+<img src="sample_images/uno.png" width="30%"><img src="sample_images/dos.png" width="30%">
 
 
-
-### Android Studio
-
-Android Studio may be used to build the demo in conjunction with Bazel. First,
-make sure that you can build with Bazel following the above directions. Then,
-look at [build.gradle](build.gradle) and make sure that the path to Bazel
-matches that of your system.
-
-At this point you can add the tensorflow/examples/android directory as a new
-Android Studio project. Click through installing all the Gradle extensions it
-requests, and you should be able to have Android Studio build the demo like any
-other application (it will call out to Bazel to build the native code with the
-NDK).
-
-### CMake
-
-Full CMake support for the demo is coming soon, but for now it is possible to
-build the TensorFlow Android Inference library using
-[tensorflow/contrib/android/cmake](../../../tensorflow/contrib/android/cmake).
